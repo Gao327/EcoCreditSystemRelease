@@ -1,225 +1,225 @@
-# EcoCredit Management Scripts
+# 🌱 EcoCredit - Environmental Rewards Platform
 
-This directory contains utility scripts to manage the EcoCredit System components.
+> **Transform your daily steps into environmental impact with EcoCredit - the sustainable rewards platform that makes every step count!**
 
-## Scripts Overview
+## 🎯 What is EcoCredit?
 
-### 🔧 `manage-backend.sh`
-Manages the Java Spring Boot backend service.
+EcoCredit is a comprehensive environmental rewards platform that converts your daily physical activity into credits that can be redeemed for real rewards from partner stores. Think of it as "Ant Forest meets modern rewards" - every step you take contributes to both your health and environmental sustainability.
 
-**Usage:**
-```bash
-./scripts/manage-backend.sh {start|stop|restart|status}
-```
+### **🌟 Key Features:**
 
-**Commands:**
-- `start` - Start the backend service on port 8080
-- `stop` - Stop the backend service (kills process on port 8080)
-- `restart` - Stop and start the backend service
-- `status` - Check if backend is running and healthy
+- **📱 Cross-Platform**: Web app + Mobile app (iOS/Android)
+- **🌱 Step Tracking**: Convert 100 steps = 1 credit
+- **🎁 Rewards System**: 16 rewards from 6 partner stores
+- **🏆 Achievements**: Unlock badges and track progress
+- **🎫 Vouchers**: Generate and redeem digital vouchers
+- **🔐 Authentication**: Guest login + Google OAuth
+- **⚡ Real-time Sync**: Both apps share the same data
 
-**Examples:**
-```bash
-# Start backend
-./scripts/manage-backend.sh start
+## 🚀 Quick Start
 
-# Restart backend (recommended when you make changes)
-./scripts/manage-backend.sh restart
-
-# Check if backend is running
-./scripts/manage-backend.sh status
-
-# Stop backend
-./scripts/manage-backend.sh stop
-```
-
-### 🌐 `start-webapp.sh`
-Starts the web application server on port 8081.
-
-**Usage:**
-```bash
-./scripts/start-webapp.sh
-```
-
-**What it does:**
-- Serves the static web app from `backend-java/src/main/resources/static/`
-- Runs on http://localhost:8081
-- Auto-redirects root `/` to `/app-with-auth.html`
-- Uses Node.js server (falls back to Python if Node.js not available)
-
-### 📱 `start-mobile.sh`
-Starts only the mobile app with QR code.
-
-**Usage:**
-```bash
-./scripts/start-mobile.sh
-```
-
-**Features:**
-- Shows QR code for device testing
-- Uses tunnel mode for external network access
-- Auto-installs dependencies if needed
-- Clear instructions for iOS/Android testing
-
-### 🚀 `start-fullstack.sh`
-Complete full stack starter that launches backend, web app, and mobile app.
-
-**Usage:**
-```bash
-./scripts/start-fullstack.sh
-```
-
-**What it does:**
-1. ✅ Checks prerequisites (Java, Maven, Node.js, npm)
-2. 🧹 Cleans up existing processes on ports 8080 and 8081
-3. 🚀 Starts backend API on port 8080
-4. 🌐 Starts web app server on port 8081
-5. 📱 Starts mobile app with QR code
-6. 📊 Provides status and useful links
-
-### 🚀 `start-all.sh` (Legacy)
-Original full stack starter that launches backend and mobile app only.
-
-**Usage:**
-```bash
-./scripts/start-all.sh
-```
-
-**What it does:**
-1. ✅ Checks prerequisites (Java, Maven, Node.js, npm)
-2. 🚀 Starts/restarts the backend on port 8080
-3. ⏳ Waits for backend to be healthy
-4. 📱 Installs mobile app dependencies if needed
-5. 🎯 Starts Expo development server
-6. 📊 Provides useful URLs and tips
-
-**Features:**
-- Automatic dependency installation
-- Health checks
-- Clear status messages
-- Helpful tips and URLs
-
-## Quick Start
-
-### For Full Development (Recommended)
-```bash
-# Start everything: Backend + Web App + Mobile App
-./scripts/start-fullstack.sh
-```
-
-### For Individual Components
-```bash
-# Backend only
-./scripts/manage-backend.sh restart
-
-# Web app only (requires backend running)
-./scripts/start-webapp.sh
-
-# Mobile app only (requires backend running)
-./scripts/start-mobile.sh
-```
-
-### Legacy Options
-```bash
-# Backend + Mobile App only (no web app)
-./scripts/start-all.sh
-```
-
-## Port Information
-
-- **Backend API**: http://localhost:8080
-- **Web App**: http://localhost:8081
-- **Mobile App (Expo)**: Port assigned automatically (usually 8082+)
-- **Health Check**: http://localhost:8080/api/health
-- **Direct Web App**: http://localhost:8081/app-with-auth.html
-
-## Troubleshooting
-
-### Port Conflicts
-If you get port conflicts:
-```bash
-# Kill processes on port 8080
-./scripts/manage-backend.sh stop
-
-# Or manually kill specific port
-lsof -ti:8080 | xargs kill -9
-```
-
-### Backend Not Starting
-1. Check Java version: `java -version` (need Java 17+)
-2. Check Maven: `mvn -version`
-3. Build manually:
-   ```bash
-   cd backend-java
-   mvn clean package -DskipTests
-   ```
-
-### Mobile App Issues
-1. Clear Expo cache:
-   ```bash
-   cd mobile-app
-   npx expo start --clear
-   ```
-2. Reinstall dependencies:
-   ```bash
-   cd mobile-app
-   rm -rf node_modules
-   npm install
-   ```
-
-### Network Connection Issues
-1. Check backend health: `curl http://localhost:8080/api/health`
-2. Check if backend is running: `./scripts/manage-backend.sh status`
-3. Restart everything: `./scripts/start-all.sh`
-
-## Development Workflow
-
-### Making Backend Changes
-```bash
-# 1. Make your changes
-# 2. Restart backend
-./scripts/manage-backend.sh restart
-```
-
-### Making Mobile App Changes
-The mobile app will auto-reload when you save files. No restart needed.
-
-### Full System Restart
-```bash
-# Stop everything
-./scripts/manage-backend.sh stop
-# Ctrl+C to stop mobile app
-
-# Start everything fresh
-./scripts/start-all.sh
-```
-
-## Environment Configuration
-
-The scripts use these default configurations:
-- Backend port: 8080
-- Backend JAR: `backend-java/target/ecocredit-backend-1.0.0.jar`
-- Mobile app directory: `mobile-app/`
-
-To modify these, edit the scripts directly or create environment variables.
-
-## Dependencies
-
-### Backend
+### **Prerequisites:**
 - Java 17 or higher
-- Maven 3.6+
-- Spring Boot 3.2.0
+- Node.js 18 or higher (for mobile app)
 
-### Mobile App
-- Node.js 16+
-- npm or yarn
-- Expo CLI
-- React Native dependencies
+### **One-Command Setup:**
+```bash
+# Start everything (Backend + Web App + Mobile App)
+./start-ecocredit.sh
+```
 
-## Support
+### **Access Your Apps:**
+- **🌐 Web Application**: http://localhost:8081/app-with-auth.html
+- **📱 Mobile Application**: Scan QR code with Expo Go app
+- **🔧 Backend API**: http://localhost:8080/api/health
 
-If you encounter issues:
-1. Check this README
-2. Run `./scripts/manage-backend.sh status`
-3. Check the logs in terminal
-4. Restart with `./scripts/start-all.sh` 
+## 📱 Mobile App Features
+
+### **🏠 Home Screen**
+- **EcoCredit Balance**: View your available credits
+- **Daily Steps**: Track your step count
+- **Progress Bar**: Visual step-to-credit conversion
+- **Quick Actions**: Browse rewards and view profile
+- **Offline Mode**: Indicator when backend is disconnected
+
+### **🎁 Rewards Screen**
+- **Credit Balance**: Display available credits
+- **Reward Categories**: Filter by store type
+- **Redeem Rewards**: Convert credits to vouchers
+- **Haptic Feedback**: Tactile confirmation for actions
+
+### **📊 Statistics Screen**
+- **Today's Summary**: Steps, calories, distance, credits
+- **Lifetime Stats**: Total credits earned and spent
+- **Weekly Progress**: Visual step tracking
+- **Recent Achievements**: Unlocked badges
+- **Performance Insights**: Activity trends
+
+### **👤 Profile Screen**
+- **User Information**: Guest status, login options
+- **Credit Summary**: Available, earned, and spent credits
+- **Activity Stats**: Achievements, redemptions, vouchers
+- **Recent Achievements**: Latest unlocked badges
+- **Active Vouchers**: Current valid vouchers
+
+## 🌐 Web App Features
+
+### **🎨 Modern Interface**
+- **Responsive Design**: Works on desktop, tablet, and mobile
+- **EcoCredit Branding**: Consistent green theme (#2E7D32)
+- **Real-time Updates**: Live data synchronization
+- **Professional UI**: Clean, intuitive interface
+
+### **🔐 Authentication**
+- **Guest Login**: Quick access without registration
+- **Google Sign-In**: Secure OAuth integration
+- **Session Management**: Persistent login state
+- **Profile Management**: User preferences and settings
+
+### **📈 Dashboard**
+- **Step Tracking**: Real-time step counter
+- **Credit Conversion**: Automatic 100:1 ratio
+- **Reward Catalog**: Browse available rewards
+- **Achievement Progress**: Track unlockable badges
+
+## 🎁 Rewards System
+
+### **Partner Stores (6 Categories):**
+1. **🌿 Eco-Friendly Products**
+   - Bamboo toothbrushes
+   - Reusable water bottles
+   - Organic skincare
+
+2. **☕ Coffee & Beverages**
+   - Starbucks vouchers
+   - Local coffee shops
+   - Tea subscriptions
+
+3. **📚 Books & Education**
+   - Environmental books
+   - Online courses
+   - Digital subscriptions
+
+4. **🎨 Arts & Crafts**
+   - Sustainable art supplies
+   - DIY kits
+   - Creative workshops
+
+5. **🏃‍♂️ Fitness & Wellness**
+   - Gym memberships
+   - Yoga classes
+   - Health supplements
+
+6. **🎪 Entertainment**
+   - Movie tickets
+   - Event passes
+   - Streaming subscriptions
+
+### **Credit Conversion:**
+- **100 steps = 1 credit**
+- **1 credit = $1 value**
+- **Rewards range**: 5-50 credits
+- **Daily limit**: 1000 steps = 10 credits
+
+## 🏆 Achievement System
+
+### **Step-Based Achievements:**
+- **🌱 First Steps**: 1,000 steps
+- **🚶‍♂️ Walker**: 5,000 steps
+- **🏃‍♂️ Runner**: 10,000 steps
+- **🏃‍♀️ Marathon**: 20,000 steps
+
+### **Credit-Based Achievements:**
+- **💰 First Credit**: Earn 1 credit
+- **💎 Credit Collector**: Earn 50 credits
+- **👑 Credit King**: Earn 100 credits
+- **🌟 Eco Warrior**: Earn 500 credits
+
+### **Activity-Based Achievements:**
+- **🎁 First Reward**: Redeem first reward
+- **🔄 Regular User**: 7 consecutive days
+- **📈 Consistent**: 30 consecutive days
+- **🏆 Champion**: 100 total redemptions
+
+## 🛠️ Configuration
+
+### **Environment Variables:**
+```bash
+# Backend configuration
+SPRING_PROFILES_ACTIVE=dev
+SERVER_PORT=8080
+DATABASE_URL=jdbc:h2:mem:ecocredit
+```
+
+### **Customization:**
+- **Brand Colors**: Edit theme colors in config
+- **Reward Partners**: Add/modify in configuration
+- **Achievement Rules**: Configure in settings
+- **Credit Conversion**: Adjust ratio in config
+
+## 🐛 Troubleshooting
+
+### **Common Issues:**
+
+#### **Backend Won't Start:**
+```bash
+# Check Java version
+java -version
+
+# Restart backend
+./restart-backend.sh
+```
+
+#### **Mobile App Issues:**
+```bash
+# Clear Expo cache
+./clear-mobile-cache.sh
+
+# Reinstall dependencies
+./reinstall-mobile-deps.sh
+```
+
+#### **Port Conflicts:**
+```bash
+# Kill all services
+./stop-all.sh
+
+# Restart everything
+./start-ecocredit.sh
+```
+
+### **Health Checks:**
+```bash
+# Backend health
+curl http://localhost:8080/api/health
+
+# Web app status
+curl http://localhost:8081
+
+# Mobile app status
+curl http://localhost:8082
+```
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📞 Support
+
+- **📧 Email**: support@ecocredit.com
+- **🐛 Issues**: [GitHub Issues](https://github.com/your-username/ecocredit/issues)
+- **📖 Documentation**: [Wiki](https://github.com/your-username/ecocredit/wiki)
+
+## 🙏 Acknowledgments
+
+- **Spring Boot**: Backend framework
+- **React Native**: Mobile app framework
+- **Expo**: Development platform
+- **H2 Database**: In-memory database
+- **Material Design**: UI components
+
+---
+
+**🌱 Make every step count with EcoCredit!**
+
+*Built with ❤️ for a sustainable future*
