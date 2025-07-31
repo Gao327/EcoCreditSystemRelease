@@ -1,0 +1,29 @@
+{
+  "name": "ecocredit-user-release",
+  "version": "1.0.0",
+  "description": "EcoCredit Environmental Rewards Platform - User Release",
+  "main": "start-ecocredit.sh",
+  "scripts": {
+    "start": "./start-ecocredit.sh",
+    "stop": "./stop-all.sh",
+    "health": "./health-check.sh"
+  },
+  "keywords": [
+    "ecocredit",
+    "environmental",
+    "sustainability",
+    "rewards",
+    "step-tracking",
+    "user-release"
+  ],
+  "author": "EcoCredit Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/ecocredit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/ecocredit/issues"
+  },
+  "homepage": "https://github.com/your-username/ecocredit#readme"
+}
