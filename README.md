@@ -10,7 +10,7 @@ EcoCredit is a comprehensive environmental rewards platform that converts your d
 
 - **📱 Cross-Platform**: Web app + Mobile app (iOS/Android)
 - **🌱 Step Tracking**: Convert 100 steps = 1 credit
-- **🎁 Rewards System**: 16 rewards from 6 partner stores
+- **🎁 Rewards System**: 16 rewards from 6 partner stores (placeholder)
 - **🏆 Achievements**: Unlock badges and track progress
 - **🎫 Vouchers**: Generate and redeem digital vouchers
 - **🔐 Authentication**: Guest login + Google OAuth
@@ -33,87 +33,7 @@ EcoCredit is a comprehensive environmental rewards platform that converts your d
 - **📱 Mobile Application**: Scan QR code with Expo Go app
 - **🔧 Backend API**: http://localhost:8080/api/health
 
-## 📱 Mobile App Features
 
-### **🏠 Home Screen**
-- **EcoCredit Balance**: View your available credits
-- **Daily Steps**: Track your step count
-- **Progress Bar**: Visual step-to-credit conversion
-- **Quick Actions**: Browse rewards and view profile
-- **Offline Mode**: Indicator when backend is disconnected
-
-### **🎁 Rewards Screen**
-- **Credit Balance**: Display available credits
-- **Reward Categories**: Filter by store type
-- **Redeem Rewards**: Convert credits to vouchers
-- **Haptic Feedback**: Tactile confirmation for actions
-
-### **📊 Statistics Screen**
-- **Today's Summary**: Steps, calories, distance, credits
-- **Lifetime Stats**: Total credits earned and spent
-- **Weekly Progress**: Visual step tracking
-- **Recent Achievements**: Unlocked badges
-- **Performance Insights**: Activity trends
-
-### **👤 Profile Screen**
-- **User Information**: Guest status, login options
-- **Credit Summary**: Available, earned, and spent credits
-- **Activity Stats**: Achievements, redemptions, vouchers
-- **Recent Achievements**: Latest unlocked badges
-- **Active Vouchers**: Current valid vouchers
-
-## 🌐 Web App Features
-
-### **🎨 Modern Interface**
-- **Responsive Design**: Works on desktop, tablet, and mobile
-- **EcoCredit Branding**: Consistent green theme (#2E7D32)
-- **Real-time Updates**: Live data synchronization
-- **Professional UI**: Clean, intuitive interface
-
-### **🔐 Authentication**
-- **Guest Login**: Quick access without registration
-- **Google Sign-In**: Secure OAuth integration
-- **Session Management**: Persistent login state
-- **Profile Management**: User preferences and settings
-
-### **📈 Dashboard**
-- **Step Tracking**: Real-time step counter
-- **Credit Conversion**: Automatic 100:1 ratio
-- **Reward Catalog**: Browse available rewards
-- **Achievement Progress**: Track unlockable badges
-
-## 🎁 Rewards System
-
-### **Partner Stores (6 Categories):**
-1. **🌿 Eco-Friendly Products**
-   - Bamboo toothbrushes
-   - Reusable water bottles
-   - Organic skincare
-
-2. **☕ Coffee & Beverages**
-   - Starbucks vouchers
-   - Local coffee shops
-   - Tea subscriptions
-
-3. **📚 Books & Education**
-   - Environmental books
-   - Online courses
-   - Digital subscriptions
-
-4. **🎨 Arts & Crafts**
-   - Sustainable art supplies
-   - DIY kits
-   - Creative workshops
-
-5. **🏃‍♂️ Fitness & Wellness**
-   - Gym memberships
-   - Yoga classes
-   - Health supplements
-
-6. **🎪 Entertainment**
-   - Movie tickets
-   - Event passes
-   - Streaming subscriptions
 
 ### **Credit Conversion:**
 - **100 steps = 1 credit**
@@ -206,9 +126,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **📧 Email**: support@ecocredit.com
-- **🐛 Issues**: [GitHub Issues](https://github.com/your-username/ecocredit/issues)
-- **📖 Documentation**: [Wiki](https://github.com/your-username/ecocredit/wiki)
+- **📧 Email**: gao2351624311@gmail.com
+- **🐛 Issues**: [GitHub Issues](https://github.com/gao327/ecocreditsystemrelease/issues)
+
 
 ## 🙏 Acknowledgments
 
