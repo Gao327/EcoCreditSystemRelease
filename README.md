@@ -1,6 +1,7 @@
 # 🌱 EcoCredit - Environmental Rewards Platform
 
 > **Transform your daily steps into environmental impact with EcoCredit - the sustainable rewards platform that makes every step count!**
+> **Project Proposal:** https://docs.google.com/document/d/1RCi-FSM9fapChwiBsHO7_-ipFFZc7dsbOk6kEZoFtHs/edit?usp=sharing
 
 ## 🎯 What is EcoCredit?
 
